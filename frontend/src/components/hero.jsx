@@ -1,6 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
+const { ethers } = require("ethers");
+
 
 export default function Hero() {
+    const [provider, setProvider] = useState(null);
+    const [account, setAccount] = useState(null);
+    const [isComnected, setIsConnected] = useState(false);
+    const [signer, setSigner] = useState(null);
+
+    //metamask wallet connection
+  async function metamaskwallet() {
+    if (window.ethereum) {
+      try {
+        await window.ethereum.request({ method: "eth_requestAccounts" });
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        setProvider(provider);
+        const signer = provider.getSigner();
+        setSigner(signer);
+        const account = await signer.getAddress();
+        setAccount(account);
+        setIsConnected(true);
+    
+      } catch (error) {
+        console.error(error);
+    }
+    }
+    else {
+      console.log("Please install Metamask");
+    }
+  }
     return (
         <>
         <div class="max-w-full mx-auto inset-0 -z-10 h-full w-full items-center px-5 py-28 [background:radial-gradient(125%_125%_at_50%_10%,#000_30%,#63e_100%)]">
@@ -14,11 +42,11 @@ export default function Hero() {
         </h1>
         <p className="mt-4 text-lg sm:text-xl leading-8 text-slate-100 sm:px-16 font-serif white-space: pre-line;">Empower news and media with cutting-edge blockchain technology, ensuring freedom, safety, and authenticity. Break free from centralized control and amplify genuine voices in journalism.</p>
         <div class="mt-8 flex w-full space-x-8 justify-center">
-            <a href="/exercises"><button class="group relative inline-flex h-12 items-center justify-center rounded-md bg-neutral-200 px-6 font-semibold text-neutral-950"><span className="text-md font-semibold">Connect Wallet</span><div class="relative ml-1 h-5 w-5 overflow-hidden"><div class="absolute transition-all duration-200 group-hover:-translate-y-5 group-hover:translate-x-4"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"><path d="M3.64645 11.3536C3.45118 11.1583 3.45118 10.8417 3.64645 10.6465L10.2929 4L6 4C5.72386 4 5.5 3.77614 5.5 3.5C5.5 3.22386 5.72386 3 6 3L11.5 3C11.6326 3 11.7598 3.05268 11.8536 3.14645C11.9473 3.24022 12 3.36739 12 3.5L12 9.00001C12 9.27615 11.7761 9.50001 11.5 9.50001C11.2239 9.50001 11 9.27615 11 9.00001V4.70711L4.35355 11.3536C4.15829 11.5488 3.84171 11.5488 3.64645 11.3536Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 -translate-x-4"><path d="M3.64645 11.3536C3.45118 11.1583 3.45118 10.8417 3.64645 10.6465L10.2929 4L6 4C5.72386 4 5.5 3.77614 5.5 3.5C5.5 3.22386 5.72386 3 6 3L11.5 3C11.6326 3 11.7598 3.05268 11.8536 3.14645C11.9473 3.24022 12 3.36739 12 3.5L12 9.00001C12 9.27615 11.7761 9.50001 11.5 9.50001C11.2239 9.50001 11 9.27615 11 9.00001V4.70711L4.35355 11.3536C4.15829 11.5488 3.84171 11.5488 3.64645 11.3536Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></div></button></a>
+            <a href={metamaskwallet}><button onClick={metamaskwallet}class="group relative inline-flex h-12 items-center justify-center rounded-md bg-neutral-200 px-6 font-semibold text-neutral-950"><span className="text-md font-semibold">Connect Wallet</span><div class="relative ml-1 h-5 w-5 overflow-hidden"><div class="absolute transition-all duration-200 group-hover:-translate-y-5 group-hover:translate-x-4"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"><path d="M3.64645 11.3536C3.45118 11.1583 3.45118 10.8417 3.64645 10.6465L10.2929 4L6 4C5.72386 4 5.5 3.77614 5.5 3.5C5.5 3.22386 5.72386 3 6 3L11.5 3C11.6326 3 11.7598 3.05268 11.8536 3.14645C11.9473 3.24022 12 3.36739 12 3.5L12 9.00001C12 9.27615 11.7761 9.50001 11.5 9.50001C11.2239 9.50001 11 9.27615 11 9.00001V4.70711L4.35355 11.3536C4.15829 11.5488 3.84171 11.5488 3.64645 11.3536Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 -translate-x-4"><path d="M3.64645 11.3536C3.45118 11.1583 3.45118 10.8417 3.64645 10.6465L10.2929 4L6 4C5.72386 4 5.5 3.77614 5.5 3.5C5.5 3.22386 5.72386 3 6 3L11.5 3C11.6326 3 11.7598 3.05268 11.8536 3.14645C11.9473 3.24022 12 3.36739 12 3.5L12 9.00001C12 9.27615 11.7761 9.50001 11.5 9.50001C11.2239 9.50001 11 9.27615 11 9.00001V4.70711L4.35355 11.3536C4.15829 11.5488 3.84171 11.5488 3.64645 11.3536Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></div></button></a>
         </div>
       </div>
     </div>
   </div> 
 </>
     );
-}
+  };
