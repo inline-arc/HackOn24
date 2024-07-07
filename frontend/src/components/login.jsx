@@ -1,6 +1,9 @@
 import React from "react";
+import { useState } from "react";
+import { useWalletStore } from "./utils/usewallet";
 
 export default function Login() {
+  const wallet = useWalletStore(state => state.wallet);
     return(
         <>
 <section class="bg-black [background:radial-gradient(125%_125%_at_50%_10%,#000_30%,#63e_100%)]">
@@ -26,7 +29,7 @@ export default function Login() {
         </h1>
 
         <p class="mt-4 leading-relaxed text-gray-200 font-semibold">
-          User ID : 0x2323SDFFSD093543PJLSFD
+          User ID : {wallet}
         </p>
 
         <form action="#" class="mt-8 grid grid-cols-6 gap-6">
