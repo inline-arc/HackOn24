@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useWalletStore } from "./utils/usewallet";
+import { useWalletStore } from "../utils/usewallet";
 import Login from "./login";
 const { ethers } = require("ethers");
 //import { ethers } from "ethers";

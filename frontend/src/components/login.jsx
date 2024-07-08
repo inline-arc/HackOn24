@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { useWalletStore } from "./utils/usewallet";
+import { useWalletStore } from "../utils/usewallet";
 
 export default function Login() {
   const wallet = useWalletStore(state => state.wallet);
