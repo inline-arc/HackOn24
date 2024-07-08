@@ -5,7 +5,7 @@ import { Search } from 'lucide-react';
 export default function Home() {
     return (
         <> 
-    <div class="flex min-h-screen bg-neutral-950">
+    <div class="flex min-h-screen bg-[#17101f]">
     <div class="w-1/5 p-6 border-r-2 border-[#2f2334]">
     <div class="flex items-center mb-6 size-12 gap-2">
       <img src="https://media.licdn.com/dms/image/D4E0BAQH8C2rq-gomdg/company-logo_200_200/0/1714460779107/floqer_logo?e=1728518400&v=beta&t=vq19ZxmTrZN4UCHEzTeH3YgJq9dZt1GpGFrkIHklKjc" alt="logo" class="rounded-md" />
@@ -20,8 +20,8 @@ export default function Home() {
   </div>
   
   
-  <div class="flex-1 p-6 pt-6">
-<nav class="flex px-5 py-3 text-[#2f2334] border-2 border-[#46354e] rounded-lg bg-transparent" aria-label="Breadcrumb">
+  <div class="flex-1">
+<nav class="flex px-5 py-3 text-[#2f2334] border-b-2 border-[#2f2334] bg-transparent" aria-label="Breadcrumb">
   <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
     <li class="inline-flex items-center">
       <a href="#" class="inline-flex items-center text-md font-semibold text-gray-400">
@@ -45,7 +45,7 @@ export default function Home() {
   
   <div class="w-1/3 p-6 border-l-2 border-[#2f2334]">
     <div class="flex items-center mb-4 p-0 gap-2">
-      <input type="text" placeholder="Search by Address / Txn Hash / Block / Token /" class="w-full p-2 rounded-lg bg-transparent text-[#2f2334] m-2 border-2 border-[#2f2334]" />
+      <input type="text" placeholder="Search by Address / Txn Hash / Block / Token /" class="w-full p-2 rounded-lg bg-transparent text-[#d6cdda] m-2 border-2 border-[#2f2334] !outline-none" />
       <button className="group relative inline-flex h-11 items-center justify-center overflow-hidden rounded-md border-2 border-[#2f2334] px-2 font-semibold text-neutral-200"><Search size={32} strokeWidth={2.25}/><div class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]"><div class="relative h-full w-8 bg-white/20"></div></div></button>
       
     </div>
