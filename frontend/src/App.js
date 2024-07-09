@@ -15,7 +15,7 @@ function App() {
     <Navbar></Navbar>
       <Hero setWallet={setWallet}/> 
       <Login  wallet={wallet}/>
-      <Home />
+      <Home wallet={wallet}/>
     </>
   );
 }

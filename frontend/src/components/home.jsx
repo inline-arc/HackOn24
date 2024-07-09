@@ -1,11 +1,15 @@
 import React from "react";
 import { Search } from 'lucide-react';
+import { useWalletStore } from "../utils/usewallet";
 
 
 export default function Home() {
+
+  const wallet = useWalletStore(state => state.wallet);
+
     return (
         <> 
-    <div class="flex min-h-screen bg-[#17101f]">
+    <div class="flex min-h-screen bg-[#17101f] [background:radial-gradient(150%_300%_at_50%_10%,#000_30%,#63e_100%)]">
     <div class="w-1/5 p-6 border-r-2 border-[#2f2334]">
     <div class="flex items-center mb-6 size-12 gap-2">
       <img src="https://media.licdn.com/dms/image/D4E0BAQH8C2rq-gomdg/company-logo_200_200/0/1714460779107/floqer_logo?e=1728518400&v=beta&t=vq19ZxmTrZN4UCHEzTeH3YgJq9dZt1GpGFrkIHklKjc" alt="logo" class="rounded-md" />
@@ -42,8 +46,24 @@ export default function Home() {
 
   </div>
   
-  
+      
+
+
+  {/* search bar */}
   <div class="w-1/3 p-6 border-l-2 border-[#2f2334]">
+  <div class="flex items-center gap-4 p-4 border-2 border-[#2f2334] rounded-lg mb-6">
+    <img src="https://github.com/MetaMask/brand-resources/raw/master/SVG/SVG_MetaMask_Icon_Color.svg" alt="avatar"
+      class="inline-block relative object-cover object-center !rounded-full w-12 h-12" />
+     
+    <div>
+      <h6 class="block font-sans text-md antialiased font-semibold leading-relaxed tracking-normal text-inherit text-slate-200">
+        Atharv More (@Inline-arc)
+      </h6>
+      <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700">
+        <p>User ID : {wallet}</p>
+      </p>
+    </div>
+  </div>
     <div class="flex items-center mb-4 p-0 gap-2">
       <input type="text" placeholder="Search by Address / Txn Hash / Block / Token /" class="w-full p-2 rounded-lg bg-transparent text-[#d6cdda] m-2 border-2 border-[#2f2334] !outline-none" />
       <button className="group relative inline-flex h-11 items-center justify-center overflow-hidden rounded-md border-2 border-[#2f2334] px-2 font-semibold text-neutral-200"><Search size={32} strokeWidth={2.25}/><div class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]"><div class="relative h-full w-8 bg-white/20"></div></div></button>
@@ -56,6 +76,8 @@ export default function Home() {
     </div>
   </div>
 </div>
+
+
         </>
     );
 }
