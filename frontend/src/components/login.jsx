@@ -24,7 +24,7 @@ export default function Login() {
         <img class="block h-16 w-auto" height="64px" src="https://media.licdn.com/dms/image/D4E0BAQH8C2rq-gomdg/company-logo_200_200/0/1714460779107/floqer_logo?e=1728518400&v=beta&t=vq19ZxmTrZN4UCHEzTeH3YgJq9dZt1GpGFrkIHklKjc"/>
         </a>
 
-        <h1 class="mt-6 text-2xl font-bold text-neutral-200 sm:text-3xl md:text-4xl">
+        <h1 class="spec mt-6 text-2xl font-bold text-neutral-200 sm:text-3xl md:text-4xl">
           Welcome to NewsBlock
         </h1>
 

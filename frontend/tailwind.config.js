@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
            intan: ["intan", "sans-serif"],
+           khujas : ["khujas", "sans-serif"],
       },
     },
   },

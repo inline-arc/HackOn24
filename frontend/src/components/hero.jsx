@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useWalletStore } from "../utils/usewallet";
 //import Login from "./login";
+import Eth from '../img/eth.png';
+import Polygon from '../img/polygon-coin.png';
 const { ethers } = require("ethers");
 //import { ethers } from "ethers";
 
@@ -27,6 +29,12 @@ export default function Hero() {
     return (
         <>
         <div class="max-w-full mx-auto inset-0 -z-10 h-full w-full items-center px-5 py-28 [background:radial-gradient(125%_125%_at_50%_10%,#000_30%,#63e_100%)]">
+  <div class="absolute flex h-16 top-16">
+    <img src={Eth} className="h-64 m-10 rotate-12 transform -scale-x-100"/>
+  </div>
+  <div class="absolute h-16 right-0 w-auto ml-10 -rotate-12 pt-20">
+    <img src={Polygon} className="h-80 m-10 -rotate-12 ml-30"/>
+  </div>
     <div class="relative py-4 flex justify-center px-4 sm:px-0">
       <div class="max-w-3xl text-center">
         <div class="pb-4">
@@ -41,6 +49,7 @@ export default function Hero() {
             </div>
       </div>
     </div>
+    
   </div> 
 </>
     );
