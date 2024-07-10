@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+ @font-intan {
+      font-family: 'sans-serif';
+      src: url(./font/Intan.otf) format('opentype');
+    }

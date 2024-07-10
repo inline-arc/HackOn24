@@ -3,6 +3,7 @@ import { Search } from 'lucide-react';
 import { useWalletStore } from "../utils/usewallet";
 
 
+
 export default function Home() {
 
   const wallet = useWalletStore(state => state.wallet);
@@ -13,7 +14,7 @@ export default function Home() {
     <div class="w-1/5 p-6 border-r-2 border-[#2f2334]">
     <div class="flex items-center mb-6 size-12 gap-2">
       <img src="https://media.licdn.com/dms/image/D4E0BAQH8C2rq-gomdg/company-logo_200_200/0/1714460779107/floqer_logo?e=1728518400&v=beta&t=vq19ZxmTrZN4UCHEzTeH3YgJq9dZt1GpGFrkIHklKjc" alt="logo" class="rounded-md" />
-      <span class="ml-2 text-3xl font-bold text-neutral-200 font-serif">NewsBlock</span>
+      <span class="ml-2 text-3xl font-bold text-neutral-200 font-inter typo">NewsBlock</span>
     </div>
     {/* <nav class="space-y-6">
       <a href="#" class="flex items-center text-white font-semibold text-xl p-4 gap-2">
@@ -59,7 +60,7 @@ export default function Home() {
       <h6 class="block font-sans text-md antialiased font-semibold leading-relaxed tracking-normal text-inherit text-slate-200">
         Atharv More (@Inline-arc)
       </h6>
-      <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700">
+      <p class="block font-sans text-sm antialiased font-normal leading-normal text-slate-400">
         <p>User ID : {wallet}</p>
       </p>
     </div>

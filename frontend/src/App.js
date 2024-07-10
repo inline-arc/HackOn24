@@ -1,6 +1,6 @@
-
 import React from 'react';
 import './App.css';
+import './index.css';
 import Hero from './components/hero';
 import Navbar from './components/navbar';
 import Login from './components/login';

@@ -5,3 +5,4 @@ export const useWalletStore = create(set => ({
     wallet: "",
     setWallet: (wallet) => set({ wallet })
 }));
+    
