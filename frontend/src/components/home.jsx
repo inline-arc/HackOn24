@@ -1,11 +1,13 @@
 import React from "react";
 import { Search } from 'lucide-react';
 import { useWalletStore } from "../utils/usewallet";
-
+import { useFormStore } from "../utils/useform";
 
 
 export default function Home() {
 
+  const formData = useFormStore((state) => state.formData);
+  
   const wallet = useWalletStore(state => state.wallet);
 
     return (
@@ -58,7 +60,7 @@ export default function Home() {
      
     <div>
       <h6 class="block font-sans text-md antialiased font-semibold leading-relaxed tracking-normal text-inherit text-slate-200">
-        Atharv More (@Inline-arc)
+        {formData.firstName} {formData.lastName} ({formData.userName})
       </h6>
       <p class="block font-sans text-sm antialiased font-normal leading-normal text-slate-400">
         <p>User ID : {wallet}</p>
