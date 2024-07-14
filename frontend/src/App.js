@@ -6,6 +6,7 @@ import Navbar from './components/navbar';
 import Login from './components/login';
 import { useState } from "react";
 import Home from './components/home';
+import Post from './components/post';
 
 function App() {
   const [wallet, setWallet] = useState("");
@@ -16,6 +17,7 @@ function App() {
       <Hero setWallet={setWallet}/> 
       <Login  wallet={wallet}/>
       <Home wallet={wallet}/>
+      <Post></Post>
     </>
   );
 }
