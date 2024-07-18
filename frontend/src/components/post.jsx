@@ -10,10 +10,10 @@ export default function Post() {
   </div>
   <button class="group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-md bg-neutral-200 px-8 font-semibold text-neutral-950"><span>Mint</span><div class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]"><div class="relative h-full w-8 bg-white/20"></div></div></button>
 </nav>
-        <div className="w-full h-screen [background:radial-gradient(150%_300%_at_50%_10%,#000_30%,#63e_100%)]">
+        <div className="w-full h-screen [background:radial-gradient(130%_300%_at_50%_10%,#000_30%,#63e_100%)]">
         <div className="flex flex-col items-start justify-center pt-20 mx-20 gap-4   px-10">
         <textarea className="w-full  resize-none bg-transparent focus:outline-none text-3xl text-white" placeholder="Title"></textarea>
-        <textarea className=" post resize-none bg-transparent border-none focus:outline-none text-xl text-white w-screen" placeholder="Write your post here"></textarea>
+        <textarea className=" post resize-none bg-transparent border-none focus:outline-none text-xl text-white justify-normal" placeholder="Write your post here"></textarea>
         </div>
         </div>
         </>

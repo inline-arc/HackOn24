@@ -1,5 +1,6 @@
 require("dotenv").config();
 require("@nomicfoundation/hardhat-toolbox");
+require("@nomiclabs/hardhat-ethers");
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -9,7 +10,7 @@ paths: {
 },
 networks: {
     zkEVM: {
-    url: `https://rpc.cardona.zkevm-rpc.com`,
+    url: `https://rpc.ankr.com/polygon_zkevm_cardona`,
     accounts: [process.env.PRIVATE_KEY],
     },
 },
