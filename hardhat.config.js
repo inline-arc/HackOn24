@@ -5,12 +5,9 @@ require("@nomiclabs/hardhat-ethers");
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
 solidity: "0.8.24",
-paths: {
-    artifacts: "./src",
-},
 networks: {
     zkEVM: {
-    url: `https://rpc.ankr.com/polygon_zkevm_cardona`,
+    url: `https://polygon-zkevm-cardona.blockpi.network/v1/rpc/public`,
     accounts: [process.env.PRIVATE_KEY],
     },
 },
